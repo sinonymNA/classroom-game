@@ -1,0 +1,16 @@
+{
+  "name": "suspect-classroom-edition",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "node server/index.js",
+    "build": "node scripts/build.js",
+    "test": "node --test",
+    "test:acceptance": "node tests/acceptance.js"
+  },
+  "dependencies": { "ws": "^8.18.0" },
+  "devDependencies": {}
+}
+

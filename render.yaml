@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: suspect-classroom
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: DEV_MODE
+        value: "false"
+

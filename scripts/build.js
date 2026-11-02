@@ -1,0 +1,3 @@
+import fs from 'node:fs';import path from 'node:path';
+fs.mkdirSync('dist',{recursive:true});const html=fs.readFileSync('public/index.html','utf8'),css=fs.readFileSync('public/style.css','utf8'),js=fs.readFileSync('public/game.js','utf8');const out=html.replace('<link rel="stylesheet" href="/style.css">',`<style>${css}</style>`).replace('<script type="module" src="/game.js"></script>',`<script type="module">${js}</script>`);fs.writeFileSync('dist/suspect.html',out);for(const f of ['index.html','teacher.html','style.css','game.js','teacher.js'])fs.copyFileSync(path.join('public',f),path.join('dist',f));console.log(`Built dist/suspect.html (${Math.ceil(Buffer.byteLength(out)/1024)} KiB)`);
+
